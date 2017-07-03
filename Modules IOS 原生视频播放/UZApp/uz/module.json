@@ -1,0 +1,12 @@
+[
+ {
+    "name":"IOSVideoplay",
+    "class":"UZModuleDemo",
+    "methods":["vidplay"]
+ },
+ {
+     "name":"moduleDemoSwift",
+     "class":"UZModuleDemoSwift",
+     "methods":["showAlert"]
+ }
+]
