@@ -1,0 +1,12 @@
+[
+ {
+    "name":"CodeScanning",
+    "class":"ScanningModel",
+    "methods":["scanning"]
+ },
+ {
+     "name":"moduleDemoSwift",
+     "class":"UZModuleDemoSwift",
+     "methods":["showAlert"]
+ }
+]

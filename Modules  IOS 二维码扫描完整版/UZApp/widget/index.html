@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Module Develop</title>
+<meta charset="utf-8">
+<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+<style type="text/css">
+	html,body{
+		height: 100%
+	}
+	body{
+		background-color: #fff;
+	    margin: 0;
+	}
+	#wrap{
+	    height: 100%;
+	    position: relative;
+	}
+	#header{
+		padding-top: 20px;
+		background-color: #5082c2;
+		height: 44px;
+	    position: relative;
+	}
+	#header h1{
+	    font-size: 20px; 
+	    height: 44px; 
+	    line-height: 44px; 
+	    margin: 0em; 
+	    color: #fff;
+		margin-left: 100px;
+		margin-right: 100px;
+		text-align: center;
+	}
+    #main{
+        display: block;
+    }
+    a.button{
+        display: -webkit-box;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        height: 36px;
+        margin: 8px;
+        background-color: rgba(240,240,240,1.0);
+        border-color: rgba(220,220,220,1.0);
+        border-width: 2px;
+        border-style: solid;
+	}
+    a.active{
+        background-color: rgba(240,240,240,0.6);
+	}
+#showMsg{
+    width:300px;
+    height:200px;
+    background-color:#ccc;
+}
+</style>
+</head>
+<body>
+	<div id="wrap">
+	    <header id="header">
+	    	<h1 id="title">模块开发</h1>
+	    </header>
+	    <div id="main">
+            <a class="button" tapmode="active" onclick="scanning()">显示对话框</a>
+            <div id="showMsg"></div>
+            
+        </div>
+    </div>
+</body>
+<script>
+    var msg;
+function scanning() {
+    var demo = api.require('CodeScanning');
+    demo.scanning({
+       
+    },function(ret, err){
+         msg =ret.tabstr ;
+          alert (ret.tabstr);
+            document.getElementById("showMsg").innerHTML = msg;
+        api.toast({
+            msg: msg
+        });
+    });
+}
+function apiready() {
+
+    
+}
+<!--apiready = function(){-->
+<!--    document.getElementById("showMsg").innerHTML = msg-->
+<!--    -->
+<!--    var demo = api.require('CodeScanning');-->
+<!--    demo.sscanningback({-->
+<!--    -->
+<!--                       },function(ret,err){-->
+<!--                       alert(ret.index);-->
+<!--                       });-->
+<!--    -->
+<!--        });-->
+<!--    -->
+<!--<!--    var demo = api.require('CodeScanning');-->-->
+<!--<!--    demo.scanning({-->-->
+<!--<!--                  <!--        msg: 'Hello App!'-->-->-->
+<!--<!--                  },function(ret, err){-->-->
+<!--<!--                  if(ret){-->-->
+<!--<!--                -->-->
+<!--<!--                  msg = ret.index ;-->-->
+<!--<!--                  alert(msg);-->-->
+<!--<!--                  }else{-->-->
+<!--<!--                  -->-->
+<!--<!--                  alert(1);-->-->
+<!--<!--                  }-->-->
+<!--<!--                  -->-->
+<!--<!--                  -->-->
+<!--<!--                -->-->
+<!--<!--                  });-->-->
+<!---->
+<!--}-->
+</script>
+</html>
